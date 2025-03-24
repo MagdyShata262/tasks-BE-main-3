@@ -38,7 +38,7 @@
                     {
                         "in": "query",
                         "name": "page",
-                        "default":1,
+                        "default": 1,
                         "required": true,
                         "description": "Task with id",
                         "schema": {
@@ -49,7 +49,7 @@
                         "in": "query",
                         "name": "limit",
                         "required": true,
-                        "default":10,
+                        "default": 10,
                         "description": "Task with id",
                         "schema": {
                             "$ref": "#/definitions/id"
@@ -108,10 +108,9 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
-        "/tasks/add-task" :{
+        "/tasks/add-task": {
             "post": {
                 "tags": [
                     "Tasks"
@@ -150,7 +149,7 @@
                     {
                         "in": "query",
                         "name": "page",
-                        "default":1,
+                        "default": 1,
                         "required": true,
                         "description": "Task with id",
                         "schema": {
@@ -161,7 +160,7 @@
                         "in": "query",
                         "name": "limit",
                         "required": true,
-                        "default":10,
+                        "default": 10,
                         "description": "Task with id",
                         "schema": {
                             "$ref": "#/definitions/id"
@@ -196,8 +195,7 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
         "/tasks/task/{id}": {
             "get": {
@@ -223,8 +221,7 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
         "/tasks/edit-task/{id}": {
             "put": {
@@ -261,8 +258,7 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
         "/tasks/complete": {
             "put": {
@@ -289,8 +285,7 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
         "/tasks/delete-task/{id}": {
             "delete": {
@@ -299,7 +294,6 @@
                         "in": "path",
                         "name": "id",
                         "description": "Task with id"
-                      
                     }
                 ],
                 "tags": [
@@ -314,11 +308,9 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
-
-        "/auth/login" :{
+        "/auth/login": {
             "post": {
                 "tags": [
                     "Auth"
@@ -351,7 +343,7 @@
                 }
             }
         },
-        "/auth/createAccount" :{
+        "/auth/createAccount": {
             "post": {
                 "tags": [
                     "Auth"
@@ -399,7 +391,6 @@
                         "in": "query",
                         "name": "name"
                     }
-                    
                 ],
                 "tags": [
                     "User"
@@ -413,8 +404,7 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
         "/auth/user-status": {
             "put": {
@@ -441,8 +431,7 @@
                         }
                     }
                 }
-            
-           }
+            }
         },
         "/auth/user/{id}": {
             "delete": {
@@ -451,7 +440,6 @@
                         "in": "path",
                         "name": "id"
                     }
-                    
                 ],
                 "tags": [
                     "User"
@@ -465,22 +453,20 @@
                         }
                     }
                 }
-            
-           }
-        }
-    },
-
-    "components":{
-        "securitySchemes":{
-            "bearerAuth":{
-                "type":"http",
-                "scheme":"bearer",
-                "bearerFormat":"JWT"
             }
         }
     },
-    "security":{
-        "bearerAuth": [] 
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "security": {
+        "bearerAuth": []
     },
     "definitions": {
         "id": {
@@ -493,86 +479,82 @@
         "Task": {
             "type": "object",
             "properties": {
-                "title":{
-                    "type":"string"
-                    
+                "title": {
+                    "type": "string"
                 },
-                "userId" : {
-                    "type":"string"
+                "userId": {
+                    "type": "string"
                 },
-                "image":{
-                     "type":"file"
-                    
+                "image": {
+                    "type": "file"
                 },
-                "description":{
-                     "type":"string"
-                    
+                "description": {
+                    "type": "string"
                 },
-                "deadline":{
-                     "type":"date"
-                    
+                "deadline": {
+                    "type": "date"
                 }
             }
         },
-        "Login":{
+        "Login": {
             "type": "object",
             "properties": {
-                "email":{
-                    "type":"string"
+                "email": {
+                    "type": "string"
                 },
-                "password":{
-                    "type":"string"
+                "password": {
+                    "type": "string"
                 },
-                "role":{
-                    "type":"string"
+                "role": {
+                    "type": "string"
                 }
             }
         },
-        "ChangeUserStatus":{
+        "ChangeUserStatus": {
             "type": "object",
             "properties": {
-                "id":{
-                    "type":"string"
+                "id": {
+                    "type": "string"
                 },
-                "status":{
-                    "type":"string"
+                "status": {
+                    "type": "string"
                 }
             }
         },
-        "Register":{
+        "Register": {
             "type": "object",
             "properties": {
-                "email":{
-                    "type":"string"
+                "email": {
+                    "type": "string"
                 },
-                "password":{
-                    "type":"string"
+                "password": {
+                    "type": "string"
                 },
-                "username":{
-                    "type":"string"
+                "username": {
+                    "type": "string"
                 },
-                "role":{
-                    "type":"string"
+                "role": {
+                    "type": "string"
                 }
             }
         },
-        "Users":{
+        "Users": {
             "type": "object",
             "properties": {
-                "assignedTasks":{
-                    "type":"integer"
+                "assignedTasks": {
+                    "type": "integer"
                 },
-                "email":{
-                    "type":"string"
+                "email": {
+                    "type": "string"
                 },
-                "status":{
-                    "type":"string"
+                "status": {
+                    "type": "string"
                 },
-                "username":{
-                    "type":"string"
+                "username": {
+                    "type": "string"
                 },
-                "role":{
-                    "type":"string"
+                "role": {
+                    "type": "string"
                 }
             }
         },
